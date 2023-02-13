@@ -1,0 +1,38 @@
+/* Add your variable customizations of theme here */
+// $headerBgColor:#005288;
+// $headerBorderColor:#d8d8d8;
+// $headerTextColor:#ffffff;
+$primaryColor:#000000;
+$primaryLightColor:#656565;
+$primaryDarkColor:#000000;
+$menuBgColor:$primaryColor;
+$infoMessageBgColor:#ffffff;
+$infoMessageTextColor: #080A08;
+$warnColor:RGB(218, 56, 44);
+
+$black20: RGBA(0,0,0,0.2);
+$aceLightBlue: #065A84; // darkened #1EAAF1 for WCAG compliance
+$yellow:#ffc800;
+
+/* Messages */
+$infoMessageBgColor:#60b5f6;
+$infoMessageTextColor:#000000;
+$warnMessageBgColor:#FFC800;
+$warnMessageTextColor:#141d26;
+$errorMessageBgColor:#EF5350;
+$errorMessageTextColor:#000000;
+$successMessageBgColor:#79ab58;
+$successMessageTextColor:#000000;
+
+// Table
+$tableBodyCellPadding:0.5rem 0.5rem !important;
+$tableFooterCellPadding:0.5rem 0.5rem !important;
+$tableHeaderCellPadding:0.5rem 0.5rem !important;
+$tableHeaderPadding:0.5rem 0.5rem !important;
+$tableFooterPadding:0.5rem 0.5rem !important;
+
+// dialog
+$dialogContentPadding: 1.5rem 1.5rem 1.5rem 1.5rem !important;
+
+// panel
+$panelHeaderPadding: 0.65rem !important;

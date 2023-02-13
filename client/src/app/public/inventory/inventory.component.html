@@ -1,0 +1,104 @@
+<div class="page">
+    <div class="card">
+        <h1 class="title">Inventory</h1>
+
+        <p-table #dt [value]="formData" [paginator]="formData?.length > 0" [totalRecords]="formData?.length" [rows]="5"
+            [rowsPerPageOptions]="[5, 10, 20, 50, 100, 500]" [autoLayout]="true" [responsive]="false"
+            [showCurrentPageReport]="formData?.length > 0"
+            currentPageReportTemplate="Showing {first} to {last} of {totalRecords}">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th [pSortableColumn]="'product.productType.name'">Product Category <p-sortIcon
+                            [field]="'product.productType.name'"></p-sortIcon></th>
+                    <th [pSortableColumn]="'product.bikeType.name'">Bike Type <p-sortIcon
+                            [field]="'product.bikeType.name'"></p-sortIcon></th>
+                    <th [pSortableColumn]="'product.brand.name'">Brand <p-sortIcon
+                            [field]="'product.brand.name'"></p-sortIcon></th>
+                    <th [pSortableColumn]="'product.name'">Product Name <p-sortIcon
+                            [field]="'product.name'"></p-sortIcon></th>
+                    <th [pSortableColumn]="'product.description'">Product Description <p-sortIcon
+                            [field]="'product.description'"></p-sortIcon></th>
+                    <th [pSortableColumn]="'quantity'">Quantity <p-sortIcon [field]="'quantity'"></p-sortIcon></th>
+                    <th [pSortableColumn]="'product.price'">Price <p-sortIcon [field]="'product.price'"></p-sortIcon>
+                    </th>
+                    <th [pSortableColumn]="'product.rating'">Rating <p-sortIcon [field]="'product.rating'"></p-sortIcon>
+                    </th>
+                    <th>Actions</th>
+                </tr>
+                <!-- FILTERS -->
+                <tr>
+                    <th>
+                        <p-dropdown placeholder="Filter" [options]="productTypes$ | async" optionLabel="name"
+                            optionValue="id" [ngModel]="productTypeFilter" appendTo="body"
+                            (onChange)="dt.filter($event.value, 'product.productTypeId', 'equals')"></p-dropdown>
+                    </th>
+                    <th>
+                        <p-dropdown placeholder="Filter" [options]="bikeTypes$ | async" optionLabel="name"
+                            optionValue="id" [ngModel]="bikeTypesFilter" appendTo="body"
+                            (onChange)="dt.filter($event.value, 'product.bikeTypeId', 'equals')"></p-dropdown>
+                    </th>
+                    <th>
+                        <p-dropdown placeholder="Filter" [options]="brands$ | async" optionLabel="name" optionValue="id"
+                            [ngModel]="brandFilter" appendTo="body"
+                            (onChange)="dt.filter($event.value, 'product.brandId', 'equals')"></p-dropdown>
+                    </th>
+                    <th><input pInputText type="text"
+                            (input)="dt.filter($event.target.value, 'product.name', 'contains')" placeholder="Filter"
+                            class="ui-column-filter"></th>
+                    <th><input pInputText type="text"
+                            (input)="dt.filter($event.target.value, 'product.description', 'contains')"
+                            placeholder="Filter" class="ui-column-filter"></th>
+                    <th><input pInputText type="text" (input)="dt.filter($event.target.value, 'quantity', 'contains')"
+                            placeholder="Filter" class="ui-column-filter"></th>
+                    <th><input pInputText type="text"
+                            (input)="dt.filter($event.target.value, 'product.price', 'contains')" placeholder="Filter"
+                            class="ui-column-filter"></th>
+                    <th><input pInputText type="text"
+                            (input)="dt.filter($event.target.value, 'product.rating', 'contains')" placeholder="Filter"
+                            class="ui-column-filter"></th>
+                    <th></th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-data let-rowIndex="rowIndex">
+                <tr>
+                    <td>{{data.product.productType.name}}</td>
+                    <td>{{data.product.bikeType?.name ?? 'N/A'}}</td>
+                    <td>{{data.product.brand.name}}</td>
+                    <td>{{data.product.name}}</td>
+                    <td class="description">{{data.product.description}}</td>
+                    <td>{{data.quantity}}</td>
+                    <td>{{data.product.price | currency}}</td>
+                    <td><p-rating *ngIf="data.product.rating" [(ngModel)]="data.product.rating" [cancel]="false"
+                            stars="5" readonly="true"></p-rating></td>
+                    <td>
+                        <i class="fa fa-trash button-icon primary-color p-col-fixed" pTooltip="Delete product"
+                            (click)="delete(data.id, rowIndex)"></i>
+                        <i class="fa fa-pencil button-icon primary-color p-col-fixed" pTooltip="Edit product"
+                            tooltipPosition="left" (click)="edit(rowIndex)"></i>
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="emptymessage">
+                <tr>
+                    <td [attr.colspan]="8">
+                        There are no products in the inventory. Please click "Add Product" button to get started.
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+
+        <div class="cta">
+
+            <div class="p-grid p-jc-end">
+                <div class="p-col-fixed">
+                    <p-button label="Add Product" icon="pi pi-plus" (click)="showAddProduct()"
+                        pTooltip="Add another product to the inventory"></p-button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<app-edit-product *ngIf="showEditDialog" [(showDialog)]="showEditDialog" (productUpdated)="refresh()"
+    [inventoryProduct]="productToEdit"></app-edit-product>

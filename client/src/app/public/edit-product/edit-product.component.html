@@ -1,0 +1,57 @@
+<app-dialog [showDialog]="showDialog" (showDialogChange)="onShowDialogChange($event)" (doIt)="onSave()"
+    [closable]="true" [closeOnEscape]="false" [submitTitle]="'Save'" [header]="'Add/Edit Inventory Product'"
+    [submitDisabled]="!form.valid || !form.touched || !form.dirty">
+
+    <form #form="ngForm" errorTailor>
+        <div class="p-fluid p-formgrid p-grid limited-width">
+            <div class="p-field p-col-4">
+                <label>Product Category</label>
+                <p-dropdown name="productType" placeholder="Please select" [options]="productTypes$ | async"
+                    optionLabel="name" optionValue="id" [(ngModel)]="inventoryProduct.product.productTypeId"
+                    appendTo="body" required></p-dropdown>
+            </div>
+            <div class="p-field p-col-4" *ngIf="inventoryProduct.product.productTypeId == 1">
+                <label>Bike Type</label>
+                <p-dropdown name="bikeType" placeholder="Please select" [options]="bikeTypes$ | async"
+                    optionLabel="name" optionValue="id" [(ngModel)]="inventoryProduct.product.bikeTypeId"
+                    appendTo="body" required></p-dropdown>
+            </div>
+            <div class="p-field p-col-4">
+                <label>Product Brand</label>
+                <p-dropdown name="brand" placeholder="Please select" [options]="brands$ | async" optionLabel="name"
+                    optionValue="id" [(ngModel)]="inventoryProduct.product.brandId" appendTo="body"
+                    required></p-dropdown>
+            </div>
+
+            <div class="p-field p-col-12">
+                <label>Product Name</label>
+                <input name="productName" [(ngModel)]="inventoryProduct.product.name" type="text" maxlength="1000"
+                    pInputText required>
+            </div>
+
+            <div class="p-field p-col-12">
+                <label>Description</label>
+                <textarea name="description" rows="3" autoResize="true" pInputTextarea
+                    [(ngModel)]="inventoryProduct.product.description" maxlength="20000" required></textarea>
+            </div>
+
+            <div class="p-field p-col-4">
+                <label>Price</label>
+                <p-inputNumber name="price" [(ngModel)]="inventoryProduct.product.price" mode="currency" currency="USD"
+                    locale="en-US" [min]="0" [max]="1000000" required></p-inputNumber>
+            </div>
+            <div class="p-field p-col-4">
+                <label>Quantity in the Inventory</label>
+                <p-inputNumber name="quantity" [(ngModel)]="inventoryProduct.quantity" [min]="0" [max]="1000000"
+                    required></p-inputNumber>
+            </div>
+            <div class="p-field p-col-4">
+                <label>Rating</label>
+                <div class="padded">
+                    <p-rating name="rating" [(ngModel)]="inventoryProduct.product.rating" [cancel]="false"
+                        stars="5"></p-rating>
+                </div>
+            </div>
+        </div>
+    </form>
+</app-dialog>

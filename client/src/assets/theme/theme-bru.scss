@@ -1,0 +1,23 @@
+$primaryColor:#000000;
+$primaryLightColor:#656565;
+$primaryTextColor:#FFCB05;
+$primaryDarkColor:#000000;
+$menuBgColor:$primaryColor;
+$aceLightBlue: #065A84; // darkened #1EAAF1 for WCAG compliance
+$yellow:#ffc800;
+
+//tooltip
+$tooltipBg:$primaryColor !default;
+$tooltipTextColor: $primaryTextColor !default;
+
+// dialog
+$dialogHeaderBg: transparent linear-gradient(to right, $primaryLightColor 0%, $primaryColor 100%) 0% 0% no-repeat padding-box !important;
+$dialogHeaderTextColor: $primaryTextColor;
+$dialogHeaderPadding: 1rem;
+$actionIconColor: #FFCB05;
+$actionIconHoverBg: #FFCB05;
+$actionIconHoverColor: #000000;
+$actionIconHoverBorderColor: $primaryLightColor;
+
+@import '../layout/css/layout-ace';
+@import './theme-blue-light';

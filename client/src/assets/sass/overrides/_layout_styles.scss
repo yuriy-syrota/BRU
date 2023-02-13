@@ -1,0 +1,281 @@
+@import 'mixins.scss';
+
+/* Add your customizations of layout here */
+a.topbar-link, a.topbar-link:hover, span.topbar-link, span.topbar-link:hover
+{
+    color: $primaryTextColor;
+    vertical-align: middle;
+}
+
+
+.menu-background-color
+{
+    background-color: $menuBgColor;
+}
+
+.hidden_on_sm {
+    @include breakpoint(sm, max) {
+        display: none !important;
+    }
+}
+
+.hidden_on_small {
+    @include breakpoint(small, max) {
+        display: none !important;
+    }
+}
+
+.hidden_on_xsmall {
+    @include breakpoint(x-small, max) {
+        display: none !important;
+    }
+}
+
+.hidden_over_xsmall {
+    @include breakpoint(x-small, min) {
+        display: none !important;
+    }
+}
+
+.logo {
+    @include breakpoint(mobile, max) {
+        margin-left: 0px !important;
+    }
+}
+
+.dc-logo {
+    padding-left: 12px;
+    margin-left: 12px;
+    color: $primaryTextColor; 
+    background-clip: text;
+    font-size: 22.5px;
+    @include breakpoint(mobile, max) {
+        font-size: 18px;
+        border-left: none;
+        padding-left: 0px;
+    }
+    font-family: 'Oswald', 'Arial Narrow', Arial, sans-serif, 'Franklin Gothic Medium';
+    font-weight: 500;
+    line-height: 29px;
+    float: left;
+}
+
+.layout-wrapper {
+    .topbar {
+        @include breakpoint(small, max) {
+            padding: 10px !important;
+        }
+        @include breakpoint(x-small, max) {
+            padding: 10px 6px !important;
+        }
+    }
+}
+
+.topbar-link {
+    margin-left: 24px;
+    margin-top: -6px;
+
+    @include breakpoint(small, max) {
+        margin-left: 10px;
+    }
+}
+
+.icon-link, .icon-link-lg, .icon-link-sm
+{
+  font-size: 24px !important;
+  margin-right: 6px;
+  vertical-align: middle;
+  @include breakpoint(mobile, max) {
+    font-size: 20px !important;
+  }
+}
+
+.icon-link-lg
+{
+    height: 34px;
+    width: 34px;
+
+    @include breakpoint(mobile, max) {
+        height: 22px;
+        width: 22px;
+        margin-right: 0px !important;
+    }
+}
+
+.icon-link-sm
+{
+    height: 22px;
+    width: 22px;
+
+    @include breakpoint(mobile, max) {
+        height: 18px;
+        width: 18px;
+    }
+}
+
+.welcome-img
+{
+    margin-top: 75px;
+    margin-bottom: 25px;
+    width: 300px;
+    @include breakpoint(mobile, max) {
+        margin-top: calc(25vh - 85px);
+        margin-bottom: calc(15vh - 85px);
+        width: 40vw;
+    }
+}
+
+.search-bar
+{
+    width: 600px;
+    @include breakpoint(small, max) {
+        width: 90vw;
+    }
+}
+
+h1.page-title
+{
+    font-size: 24px !important;
+    @include breakpoint(small, max) {
+        font-size: 16px !important;
+        margin-bottom: 0 !important;
+    }
+}
+
+h1.title
+{
+    font-size: 20px !important;
+    @include breakpoint(small, max) {
+        font-size: 16px !important;
+    }
+}
+
+h1.card  {
+    margin: -6px 0 0.5em 0;
+    vertical-align: middle;
+    padding: 0.1em !important;
+    padding-top: 0 !important;
+    font-size: 24px !important;
+    font-weight: 500 !important;
+    font-family: "Oswald", "Arial Narrow", Arial, sans-serif;
+    @include breakpoint(small, max) {
+        padding: 6px !important;
+        font-size: 16px !important;
+    }
+}
+
+h2 {
+    @include breakpoint(small, max) {
+        font-size: 14px !important;
+    }    
+}
+
+
+h1 {
+	font-size: 1.5rem;
+}
+
+h2 {
+	font-size: 1.25rem;
+}
+
+h3 {
+	font-size: 1rem;
+}
+
+h4 {
+	font-size: 0.75rem;
+}
+
+h5 {
+	font-size: 0.5rem;
+}
+
+h6 {
+	font-size: 0.25rem;
+}
+
+body {
+    @include breakpoint(small, max) {
+        font-size: 12px !important;
+    }
+}
+
+.exhibit
+{
+    margin-top: 0 !important;
+    font-size: 16px;
+    @include breakpoint(small, max) {
+        font-size: 12px;
+    }
+}
+
+.fake-button
+{
+    @include breakpoint(small, max) {
+        max-width: 110px;
+    }   
+}
+
+.layout-footer
+{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 14px 20px 14px 20px !important;
+    border-top: solid 0.5px rgb(206, 212, 218);
+    
+    @include breakpoint(x-small, max) {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+}
+
+body .layout-wrapper .layout-content .layout-content-container {
+    padding: 2px;
+    
+    @include breakpoint(x-small, max) {   
+        padding: 0px !important;
+    }
+}
+
+.section
+{
+    border: solid 0.5px #d8d8d8;
+    padding: 12px;
+    height: 100%;
+
+    @include breakpoint(x-small, max) {   
+        // border: none;
+        padding: 6px;
+    }
+}
+
+.card
+{
+    padding: 1em;
+    
+    @include breakpoint(x-small, max) {   
+        margin-top: 7px !important;
+        padding: 6px;
+    }   
+}
+
+.search-icon
+{
+    margin-right: 12px;
+
+    @include breakpoint(x-small, max) {   
+        max-width: 20px;
+        margin-right: 6px;
+    }   
+}
+
+.feedback-container
+{
+    width: 640px;
+    @include breakpoint(small, max) {   
+        width:auto;
+    }
+}

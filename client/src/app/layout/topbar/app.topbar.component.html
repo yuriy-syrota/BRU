@@ -1,0 +1,13 @@
+<div class="topbar clearfix">
+
+    <span class="clickable dc-logo" routerLink="/">
+        Bikes "R" Us
+    </span>
+
+    <nav aria-label="Main Navigation" class="bar-links">
+
+        <a class="topbar-link" [class.current]="currentUrl == '/inventory'" routerLink="/inventory" style="margin-left: 0; margin-right: 36px; padding-right: 6px;">
+            <span class="link-text">Inventory</span>
+        </a>
+    </nav>
+</div>

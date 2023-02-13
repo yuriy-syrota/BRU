@@ -1,0 +1,272 @@
+.note
+{
+    color: #F9D71C;
+    float: right;
+}
+
+.logo
+{
+    float: left;
+}
+
+h1.title
+{
+    border-bottom: solid 0.5px #d8d8d8;
+    font-weight: bold;
+    font-size: 20px;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+}
+
+h1.no-border
+{
+    border-bottom: none !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+h1.page-title
+{
+    text-align: center;
+    font-weight: bold;
+}
+
+h3.title, h2.title
+{
+    border-bottom: solid 0.5px #d8d8d8;
+    font-weight: bold;
+    font-size: 14px;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    margin-block-start: 0;
+}
+
+.foot-note
+{
+    font-style: italic;
+    padding: 12px;
+    margin-bottom: 40px;
+}
+
+.full-height
+{
+    height: calc(100vh - 101px) !important;
+}
+
+.ui-g-auto
+{
+    flex: 1 1 1;
+    float: left;
+    box-sizing: border-box;
+}
+
+.ui-g-grow
+{
+    flex-grow: 1;
+    padding: 7px;
+}
+
+.ui-g-shrink
+{
+    flex: 0 1 1;
+    float: left;
+    box-sizing: border-box;
+}
+
+.ui-g-nowrap
+{
+    flex-wrap: nowrap;
+}
+
+.ui-g-pad-left
+{
+    padding-left: 18px;
+}
+
+.header-bar
+{
+    /* background-image: url("/assets/layout/images/topbarBG.jpg"); */
+    /* background-position: top;
+    background-repeat: no-repeat; */
+    height: 60px;
+    margin-bottom: 12px;
+    text-align: center;
+    /* color: white; */
+    
+    /* font-family: 'Oswald'; */
+    font-family: 'Arial Narrow', Arial, sans-serif, 'Franklin Gothic Medium' !important;
+    font-style: normal !important;
+    font-weight: bold !important;
+    font-size: 48px !important;
+
+}
+
+.button-icon
+{
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.ui-g .ui-g-nopad > div[class^="ui-g-"]
+{
+    padding: 0 !important;   
+}
+
+.badge
+{
+    float: right;
+    border-radius: 50%;
+    font-weight: bold;
+    padding: 0 4px;
+    min-width: 21px;
+    height: 21px;
+    line-height: 21px;
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+}
+
+.green
+{
+    color: #6ebc3b;
+}
+
+.green-background
+{
+    background-color: #6ebc3b !important;
+}
+
+.red
+{
+    color: #da382c;
+}
+
+.error-msg
+{
+    color: #da382c; /* to make it 508 compliant */
+    font-size: small;
+}
+
+::ng-deep .ui-g
+{
+    width: 100%;
+}
+
+ /* Fixes primeng default min width being too large */
+.ui-dropdown {
+    min-width: 50px !important;
+}
+
+.hidden
+{
+    display: none !important;
+    /* height: 0;
+    width: 0; */
+}
+
+.clickable
+{
+    cursor: pointer;
+}
+
+.validation-error-link
+{
+    cursor: pointer;
+    margin-left: 12px;
+    margin-top: 6px;
+    text-decoration: underline;
+    display: inline-block;
+    padding-right: 12px;
+}
+
+.validation-error-link:hover
+{
+    font-weight: bold;
+}
+
+.link
+{
+    text-decoration: underline !important;
+    border-bottom: none !important;
+    cursor: pointer;
+}
+
+.fake-button:hover
+{
+    cursor: pointer;
+    filter: brightness(110%);
+    margin-right: 2px;
+}
+
+.no-padding
+{
+    padding: 0 !important;
+}
+
+.intro
+{
+    font-size: medium;
+    margin-bottom: 18px;
+    background-color: #fffeaa;
+    padding: 12px;
+    box-shadow: 0 2px 4px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
+    width: 100%;
+}
+
+.large-icon
+{
+    color: red;
+    padding: 0 12px;
+}
+
+.vert-center-content
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* IE11 */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+    body .layout-wrapper.layout-static .layout-content {
+        padding-top: 35px;
+    }
+}
+
+
+@media screen
+{
+    .for-print
+    {
+        display: none !important;
+    }
+
+    .not-for-print
+    {
+        display: block !important;
+    }
+}
+
+@media print 
+{
+    .for-print
+    {
+        display: block !important;
+    }    
+
+    .not-for-print
+    {
+        display: none !important;
+    }
+
+    body .layout-wrapper.layout-static .layout-content {
+        padding-top: 0 !important;
+    }
+
+    @page 
+    {
+        margin: 5px;
+    }
+}

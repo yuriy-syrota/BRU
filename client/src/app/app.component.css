@@ -1,0 +1,44 @@
+.layout-content-container
+{
+    max-height: calc(100vh - 97px);
+    overflow-y: auto;
+}
+
+/* IE11 */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .layout-content-container
+  { 
+    height: 100%;
+    position: relative;
+    overflow: auto;
+  }
+
+  ::ng-deep .layout-footer
+  {
+    position: fixed;    
+    bottom: 0;
+    width: 100%;
+  }  
+}
+
+@media print 
+{
+  @page :footer {
+    display: none
+  }
+
+  @page :header {
+      display: none
+  } 
+
+  app-topbar { display:none; }
+
+  /* @page :first { 
+    app-topbar { display:block; } 
+  }     */
+}
+
+
+@page {
+  margin: 1em 1mm;
+}

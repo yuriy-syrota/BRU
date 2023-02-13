@@ -1,0 +1,18 @@
+.page
+{
+    padding: 0 10px 10px 10px;
+}
+
+.cta
+{
+    margin-top: 24px;
+    text-align: right;
+}
+
+.description 
+{
+    white-space: nowrap;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

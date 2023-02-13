@@ -1,0 +1,61 @@
+﻿{
+   "CodeGenerationMode": 1,
+   "ContextClassName": "BRUContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": false,
+   "ModelNamespace": null,
+   "OutputContextPath": "",
+   "OutputPath": "Entities",
+   "PreserveCasingWithRegex": true,
+   "ProjectRootNamespace": "Data",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "Tables": [
+      {
+         "Name": "[MAIN].[Inventory]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[MAIN].[Product]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[MAIN].[ProductImage]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[REFERENCE].[BikeType]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[REFERENCE].[Brand]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[REFERENCE].[ProductType]",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": "YURIY-PC.BRU",
+   "UncountableWords": null,
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": false,
+   "UseDateOnlyTimeOnly": false,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": false,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": false,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UseSchemaFolders": false,
+   "UseSpatial": false,
+   "UseT4": false
+}

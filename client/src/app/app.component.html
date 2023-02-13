@@ -1,0 +1,24 @@
+<!-- GLOBAL TOAST -->
+<p-toast key="globalToast" position="top-center" baseZIndex="2147483647"></p-toast>
+
+<!-- GLOBAL CONFIRMATION DIALOG -->
+<p-confirmDialog #cd header="Please Confirm Deletion" [closable]="false" icon="fa fa-trash">
+  <p-footer>
+    <button type="button" pButton icon="pi pi-check" label="Delete" (click)="cd.accept()"></button>
+    <button type="button" pButton icon="pi pi-times" label="Cancel" (click)="cd.reject()"></button>
+  </p-footer>
+</p-confirmDialog>
+
+<div class="layout-wrapper layout-static layout-static-inactive">
+
+  <app-topbar></app-topbar>
+
+  <div class="layout-content">
+
+    <main class="layout-content-container">
+      <router-outlet></router-outlet>
+    </main>
+
+    <app-footer class="not-for-print"></app-footer>
+  </div>
+</div>

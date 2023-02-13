@@ -1,0 +1,39 @@
+.bar-links
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    height: 30px;
+    float: right;
+    font-weight: bold;
+}
+
+.link-text
+{
+    vertical-align: middle;
+}
+
+.badge
+{
+    margin-left: 2px;
+}
+
+.beta
+{
+    background-color: white;
+    border-radius: 3px;
+    padding: 8px 6px 4px 6px;
+    margin-left: 18px;
+    float: left;
+}
+
+.current
+{
+    border-bottom: solid 2px #FFCB05;
+}
+
+.login-register-span
+{
+    padding-left: 6px;
+}
